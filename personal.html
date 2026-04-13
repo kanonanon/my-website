@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Information</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HERO -->
+<div class="cs-hero">
+    <div class="cs-hero-content">
+
+        <!-- LOGO -->
+        <div class="logo-container">
+            <img src="images/um-logo.jpg" alt="UM Logo" class="logo">
+        </div>
+
+        <!-- TEXT -->
+        <h1 class="cs-title">Personal Profile</h1>
+        <p class="cs-subtitle">Know More About Me</p>
+
+        <!-- NAV -->
+        <div class="nav-buttons">
+            <a href="um.html">UM</a>
+            <a href="personal.html">Personal</a>
+            <a href="index.html">Company</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- PERSONAL INFO SECTION -->
+<section class="cs-events fade-in">
+
+    <h2>My Personal Information</h2>
+
+    <div class="events-grid">
+
+        <!-- CARD 1 -->
+        <div class="event-card">
+            <img src="images/profile1.png" alt="Family Picture">
+            <h3>Family Picture</h3>
+            <p>
+                This section represents my family. They are my biggest support system
+                and the reason behind my motivation and success in life and studies.
+            </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="event-card">
+            <img src="images/profile2.png" alt="Friends">
+            <h3>Friends</h3>
+            <p>
+                My friends are the people I trust and enjoy spending time with.
+                We share memories, experiences, and support each other in everything we do.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="event-card">
+            <img src="images/profile3.png" alt="Friends">
+            <h3>Friends</h3>
+            <p>
+                Another group of close friends who make my student life more fun,
+                meaningful, and memorable through shared moments and activities.
+            </p>
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- ================= RESUME SECTION ================= -->
+<section class="resume-section">
+
+    <h2>My Resume</h2>
+
+    <div class="resume-box">
+        <!-- LARGE RESUME IMAGE -->
+        <img src="images/my-resume.jpg" alt="My Resume" class="resume-image">
+
+    </div>
+
+</section>
+
+<!-- ================= PROJECTS SECTION ================= -->
+<section class="projects-showcase">
+
+    <h2>My Programming Projects</h2>
+        
+    <div class="projects-grid">
+
+    <div class="project-card" onclick="openProject('usd')">
+        <h3>Dollars to Peso</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('temp')">
+        <h3>Fahrenheit to Celsius</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('inch')">
+        <h3>Inches to CM</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('sphere')">
+        <h3>Sphere Volume</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('depr')">
+        <h3>Depreciation</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('eoq')">
+        <h3>EOQ Calculator</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('radio')">
+        <h3>Radio Button Calculator</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('basic')">
+        <h3>Basic Calculator</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('add')">
+        <h3>Addition</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('sub')">
+        <h3>Subtraction</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('mul')">
+        <h3>Multiplication</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('div')">
+        <h3>Division</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('vowel')">
+        <h3>Vowel / Consonant</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('aircraft')">
+        <h3>Aircraft System</h3>
+    </div>
+
+    <div class="project-card" onclick="openProject('ship')">
+        <h3>Ship System</h3>
+    </div>
+
+</div>
+</div>
+
+
+
+<script>
+let currentProject = "";
+
+function openProject(type) {
+    document.getElementById("projectModal").style.display = "flex";
+    document.getElementById("resultBox").innerHTML = "";
+    const inputArea = document.getElementById("inputArea");
+    inputArea.innerHTML = "";
+    currentProject = type;
+
+    // INPUT BUILDER
+    const input = (id, placeholder) =>
+        `<input id="${id}" placeholder="${placeholder}">`;
+
+    const select = `
+        <select id="op">
+            <option value="+">Add</option>
+            <option value="-">Subtract</option>
+            <option value="*">Multiply</option>
+            <option value="/">Divide</option>
+        </select>
+    `;
+
+    switch(type) {
+
+        case "usd":
+            document.getElementById("projectTitle").innerText = "Dollars to Peso";
+            inputArea.innerHTML = input("usd","USD Amount");
+            break;
+
+        case "temp":
+            document.getElementById("projectTitle").innerText = "Fahrenheit to Celsius";
+            inputArea.innerHTML = input("f","Fahrenheit");
+            break;
+
+        case "inch":
+            document.getElementById("projectTitle").innerText = "Inches to CM";
+            inputArea.innerHTML = input("i","Inches");
+            break;
+
+        case "sphere":
+            document.getElementById("projectTitle").innerText = "Sphere Volume";
+            inputArea.innerHTML = input("r","Radius");
+            break;
+
+        case "depr":
+            document.getElementById("projectTitle").innerText = "Depreciation";
+            inputArea.innerHTML = `
+                ${input("price","Price")}
+                ${input("salvage","Salvage Value")}
+                ${input("years","Years")}
+            `;
+            break;
+
+        case "eoq":
+            document.getElementById("projectTitle").innerText = "EOQ Calculator";
+            inputArea.innerHTML = `
+                ${input("b","Demand (B)")}
+                ${input("s","Order Cost (S)")}
+                ${input("h","Holding Cost (H)")}
+            `;
+            break;
+
+        case "radio":
+            document.getElementById("projectTitle").innerText = "Radio Button Calculator";
+            inputArea.innerHTML = `
+                ${input("a","A")}
+                ${input("b","B")}
+                ${select}
+            `;
+            break;
+
+        case "basic":
+            document.getElementById("projectTitle").innerText = "Calculator";
+            inputArea.innerHTML = `
+                ${input("a","A")}
+                ${input("b","B")}
+                ${select}
+            `;
+            break;
+
+        case "add":
+        case "sub":
+        case "mul":
+        case "div":
+            document.getElementById("projectTitle").innerText = type.toUpperCase();
+            inputArea.innerHTML = `
+                ${input("a","Number 1")}
+                ${input("b","Number 2")}
+            `;
+            break;
+
+        case "vowel":
+            document.getElementById("projectTitle").innerText = "Vowel / Consonant";
+            inputArea.innerHTML = input("letter","Enter Letter");
+            break;
+
+        case "aircraft":
+            document.getElementById("projectTitle").innerText = "Aircraft System";
+            inputArea.innerHTML = `
+                ${input("type","Aircraft Type")}
+                ${input("hours","Flight Hours")}
+            `;
+            break;
+
+        case "ship":
+            document.getElementById("projectTitle").innerText = "Ship System";
+            inputArea.innerHTML = `
+                ${input("name","Ship Name")}
+                ${input("capacity","Capacity")}
+            `;
+            break;
+    }
+}
+
+function runProject() {
+    let result = "";
+
+    const val = id => parseFloat(document.getElementById(id)?.value || 0);
+
+    switch(currentProject) {
+
+        case "usd":
+            result = val("usd") * 56;
+            break;
+
+        case "temp":
+            result = (val("f") - 32) * 5/9;
+            break;
+
+        case "inch":
+            result = val("i") * 2.54;
+            break;
+
+        case "sphere":
+            result = (4/3) * Math.PI * Math.pow(val("r"), 3);
+            break;
+
+        case "depr":
+            result = (val("price") - val("salvage")) / val("years");
+            break;
+
+        case "eoq":
+            result = Math.sqrt((2 * val("b") * val("s")) / val("h"));
+            break;
+
+        case "radio":
+        case "basic":
+            const a = val("a"), b = val("b");
+            const op = document.getElementById("op").value;
+            result = eval(`${a}${op}${b}`);
+            break;
+
+        case "add":
+            result = val("a") + val("b");
+            break;
+
+        case "sub":
+            result = val("a") - val("b");
+            break;
+
+        case "mul":
+            result = val("a") * val("b");
+            break;
+
+        case "div":
+            result = val("a") / val("b");
+            break;
+
+        case "vowel":
+            const c = document.getElementById("letter").value.toLowerCase();
+            result = "aeiou".includes(c) ? "Vowel" : "Consonant";
+            break;
+
+        case "aircraft":
+            result = `Aircraft ${document.getElementById("type").value} flew ${val("hours")} hours`;
+            break;
+
+        case "ship":
+            result = `Ship ${document.getElementById("name").value} capacity: ${val("capacity")}`;
+            break;
+    }
+
+    document.getElementById("resultBox").innerText = result;
+}
+
+function closeModal() {
+    document.getElementById("projectModal").style.display = "none";
+}
+</script>
+
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+
+        <span class="close-btn" onclick="closeModal()">×</span>
+
+        <h2 id="projectTitle"></h2>
+
+        <div id="inputArea"></div>
+
+        <button class="run-btn" onclick="runProject()">Run</button>
+
+        <h3>Result:</h3>
+        <div id="resultBox"></div>
+
+    </div>
+</div>
+</body>
+</html>
