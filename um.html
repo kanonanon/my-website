@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The University of Manila</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HERO -->
+    <div class="um-hero fade-in">
+        <div class="um-hero-content">
+            <h1>The University of Manila</h1>
+            <p class="hero-motto">Patria, Scientia et Virtus</p>
+            <p class="hero-location">
+                <a href="https://www.google.com/maps?q=546+Delos+Santos+St,+403,+Manila,+1008+Metro+Manila" target="_blank">
+                    📍 546 Delos Santos St, 403, Manila, 1008 Metro Manila
+                </a>
+            </p>
+            <div class="nav-buttons">
+                <a href="cs.html">CS</a>
+                <a href="personal.html">Personal</a>
+                <a href="index.html">Company</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT UM SECTION -->
+    <section class="about-um fade-in">
+        <h2>History of The University of Manila</h2>
+        <p>
+            The University of Manila (UM) was founded in 1913 with the goal of providing
+        accessible and high-quality education to Filipinos. Throughout its long history,
+        UM has grown into a respected institution known for producing graduates who excel
+        in various fields such as law, engineering, business, and education.  
+        </p>
+        <p>
+        Despite changes in society and technology over the years, the university continues
+        to uphold its core values of love for country, science, and virtue. Today, UM
+        remains committed to shaping future leaders who contribute meaningfully to nation-building.
+        </p>
+    </section>
+
+
+<section class="mission-section fade-in">
+    <div class="mission-container">
+        <h2>Mission</h2>
+        <p>
+            <strong>ACE</strong> - To accomplish something with complete success.<br>
+            <strong>A</strong> - Anchor in the hearts of the youth the love of country, science, and virtue.<br>
+            <strong>C</strong> - Create an atmosphere of academic excellence and competence.<br>
+            <strong>E</strong> - Empower the youth with modern scientific technological skills in braving the challenges of the global society.
+        </p>
+    </div>
+</section>
+<!-- VISION SECTION -->
+<section class="vision-section fade-in">
+    <div class="vision-container">
+        <h2>Vision</h2>
+        <p>
+            To impart to the future generations the University of Manila trilogy of ideals: love of country, love of science, love of virtue, in making the lives of others better, brighter, lighter, and more livable by making quality education accessible to all.
+        </p>
+    </div>
+</section>
+
+<!-- MOTTO SECTION -->
+<section class="motto-section fade-in">
+    <div class="motto-container">
+        <h2>Motto</h2>
+        <p>
+            To acquire knowledge, skills, and values fo the benefit of mankind.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT US SECTION -->
+<!-- CONTACT US SECTION -->
+<section class="um-contact-section fade-in">
+
+    <div class="um-contact-split">
+
+        <!-- LEFT SIDE -->
+        <div class="um-contact-left">
+
+            <h2 class="um-contact-title">Contact Us</h2>
+
+            <!-- UM LOGO CIRCLE -->
+            <div class="um-contact-row">
+                <img src="images/um-logo.jpg" class="um-contact-circle">
+                <p class="um-contact-main">The University of Manila</p>
+            </div>
+
+            <!-- LOCATION -->
+            <div class="um-contact-row">
+                <img src="images/um-location.png" class="um-contact-circle">
+                <p class="um-contact-text">
+                    546 Delos Santos St, 403, Manila, 1008 Metro Manila
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE (FULL MAP SPACE) -->
+        <div class="um-contact-right">
+
+            <a href="https://www.google.com/maps?q=546+Delos+Santos+St,+403,+Manila,+1008+Metro+Manila" target="_blank">
+                <img src="images/um-location.png" alt="UM Map" class="um-contact-map">
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+        threshold: 0.2
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+</script>
+</body>
+</html>
